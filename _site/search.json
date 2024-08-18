@@ -1,17 +1,17 @@
 [
   {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "gentroFlow",
     "section": "",
     "text": "Hardy-Weinberg Equilibrium\n\n\n\n\n\n\n\nnews\n\n\ngenetics\n\n\nstatistics\n\n\n\n\n\n\n\n\n\n\n\nAug 18, 2024\n\n\nSzymon Szyszkowski\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 15, 2024\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Hardy-Weinberg Equilibrium",
-    "section": "",
-    "text": "Hardy-Weinberg Equilibrium\nWorking with Genome Wide Associations Studies (GWAS) most of people will encounter a term called Hardy-Weinberg Equilibrium. In this post I would like to explain to myself and all of you readers, what does it mean.\nFirst a bit of statistics :(\n\n1 + 1\n\n[1] 2"
   },
   {
     "objectID": "about.html",
@@ -21,10 +21,10 @@
     "text": "About this blog"
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Hardy-Weinberg Equilibrium",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "Hardy-Weinberg Equilibrium\nWorking with Genome Wide Associations Studies (GWAS) most of people will encounter a term called Hardy-Weinberg Equilibrium. In this post I would like to explain to myself and all of you readers, what does it mean.\nFirst a bit of statistics :(\n\n1 + 1\n\n[1] 2"
   }
 ]
