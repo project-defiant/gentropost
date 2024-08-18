@@ -22,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -96,6 +62,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -186,12 +154,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Hardy-Weinberg Equilibrium</h1>
 <p>Working with Genome Wide Associations Studies (GWAS) most of people will encounter a term called <code>Hardy-Weinberg Equilibrium</code>. In this post I would like to explain to myself and all of you readers, what does it mean.</p>
 <p>First a bit of statistics :(</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
+<p>Let’s think of <strong>binomial distribution</strong> with following formula <span class="math inline">\(Bin(2,f)\)</span> where:</p>
+<ul>
+<li><p><span class="math inline">\(2\)</span> represents number of possible states, that the sample can occur in. In terms of SNP imagine this as a thesis (SNP exists or SNP does not exist).</p></li>
+<li><p><span class="math inline">\(f\)</span> represents the probability of the positive thesis appearing. In terms of an SNP this will be it’s allele frequency.</p></li>
+</ul>
+<p>Also denote the assumption that <span class="math inline">\(f+f' = 1\)</span>, and</p>
+<ul>
+<li><p><span class="math inline">\(f\)</span> - frequency of allele 1</p></li>
+<li><p><span class="math inline">\(f'\)</span> - frequency of allele 2</p></li>
+</ul>
+<p>and total sum of all possible alleles in given population should be then the sum of allele frequencies.</p>
+<p><span class="math display">\[
+f + f' = 1
+\]</span></p>
+<p>Where 1 means 100% of all alleles in the population. This will incline that the probability of obtaining 2 <span class="math inline">\(f\)</span> alleles is going to be <span class="math inline">\(f^2\)</span> , two <span class="math inline">\(f'\)</span> alleles as <span class="math inline">\(f'^2\)</span> and one copy of each allele as <span class="math inline">\(2ff'\)</span> . We can see it clearly by expanding the original formula by quadratic equation.</p>
+<p><span class="math display">\[
+f + f' = 1
+\]</span></p>
+<p><span class="math display">\[
+f^2 + 2ff' + f'^2 = 1^2
+\]</span></p>
+<p>Now we can create a matrix of conditions for Hardy Weinberg Equilibrium.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>genotype</th>
+<th>probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(11\)</span></td>
+<td><span class="math inline">\(f^2\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(12\)</span></td>
+<td><span class="math inline">\(2ff'\)</span> or <span class="math inline">\(2f(1-f)\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(22\)</span></td>
+<td><span class="math inline">\(f'^2\)</span> or <span class="math inline">\((1-f)(1-f)\)</span> or <span class="math inline">\((1-f)^2\)</span></td>
+</tr>
+</tbody>
+</table>
 
 
 </section>

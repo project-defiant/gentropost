@@ -22,7 +22,7 @@ Also denote the assumption that $f+f' = 1$, and
 
 -   $f$ - frequency of allele 1
 
--    $f'$ - frequency of allele 2
+-   $f'$ - frequency of allele 2
 
 and total sum of all possible alleles in given population should be then the sum of allele frequencies.
 
