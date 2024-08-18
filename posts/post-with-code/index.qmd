@@ -1,0 +1,17 @@
+---
+title: "Hardy-Weinberg Equilibrium"
+author: "Szymon Szyszkowski"
+date: "2024-08-18"
+categories: [news, genetics, statistics]
+image: "image.jpg"
+---
+
+# Hardy-Weinberg Equilibrium
+
+Working with Genome Wide Associations Studies (GWAS) most of people will encounter a term called `Hardy-Weinberg Equilibrium`. In this post I would like to explain to myself and all of you readers, what does it mean.
+
+First a bit of statistics :(
+
+```{r}
+1 + 1
+```
