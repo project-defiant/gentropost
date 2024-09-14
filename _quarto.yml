@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "blog"
+  title: "Defiant genetics blog"
   navbar:
     right:
       - about.qmd
